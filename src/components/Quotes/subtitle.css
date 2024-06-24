@@ -1,0 +1,19 @@
+.subtitle-container {
+    position: relative;
+    margin-top: 20px;
+    height: 50px;
+    text-align: center;
+  }
+  
+  .subtitle-text {
+    font-family: "Poppins";
+    position: static;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  
