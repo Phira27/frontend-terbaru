@@ -147,7 +147,7 @@ function HistoryPasirian() {
                <TableCell align="justify">{post.rata_PM10_concentration} µgram/m3</TableCell>
                <TableCell align="justify">{post.rata_PM25_concentration} µm/m3</TableCell>
                <TableCell align="justify">{post.rata_NO2_concentration}</TableCell>
-               <TableCell align="justify">{post.rata_humidity} RH</TableCell>
+               <TableCell align="justify">{post.rata_humidity} %</TableCell>
                <TableCell align="justify">{post.rata_temperature} °C</TableCell>
                <TableCell align="justify">{post.modus_average}</TableCell>
              </TableRow>

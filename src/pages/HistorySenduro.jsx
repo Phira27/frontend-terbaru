@@ -172,7 +172,7 @@ function HistorySenduro() {
                       {post.rata_NO2_concentration}
                     </TableCell>
                     <TableCell align="justify">
-                      {post.rata_humidity} RH
+                      {post.rata_humidity} %
                     </TableCell>
                     <TableCell align="justify">
                       {post.rata_temperature} °C
