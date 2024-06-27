@@ -163,13 +163,13 @@ function HistorySenduro() {
                       {formatDate(post.tanggal)}
                     </TableCell>
                     <TableCell align="justify">
-                      {post.rata_PM10_concentration} µgram/m3
+                      {post.rata_PM10_concentration} µg/m3
                     </TableCell>
                     <TableCell align="justify">
-                      {post.rata_PM25_concentration} µm/m3
+                      {post.rata_PM25_concentration} µg/m3
                     </TableCell>
                     <TableCell align="justify">
-                      {post.rata_NO2_concentration}
+                      {post.rata_NO2_concentration} µg/m3
                     </TableCell>
                     <TableCell align="justify">
                       {post.rata_humidity} %
