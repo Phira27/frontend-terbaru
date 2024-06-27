@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 import logo from "../../assets/logo.png";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { AiOutlineHome, AiOutlineProject, AiOutlineUser } from "react-icons/ai";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -48,14 +46,14 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                 Home
               </Nav.Link>
             </Nav.Item>
 
             <NavDropdown
               title={
                 <span>
-                  <AiOutlineProject style={{ marginBottom: "2px" }} /> History
+                  History
                 </span>
               }
               id="basic-nav-dropdown"
@@ -89,7 +87,7 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+               About
               </Nav.Link>
             </Nav.Item>
           </Nav>

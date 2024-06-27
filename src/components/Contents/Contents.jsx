@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import TemperatureChart from './TemperatureChart';
 import HumidityChart from './HumidityChart';
@@ -6,8 +6,8 @@ import No2Chart from './No2Chart';
 import Pm10Chart from './Pm10Chart';
 import Pm25Chart from './Pm25Chart';
 import StatusSenduro from './StatusSenduro';
-import StatusDawuhan from './StatusDawuhan';
-import StatusJatiroto from './StatusJatiroto';
+import StatusDawuhan from './StatusLumajang';
+import StatusPasirian from './StatusPasirian';
 import PieChart from './PieChart';
 import Skala from './Skala';
 
@@ -44,7 +44,8 @@ const Contents = () => {
 
   return (
     <div className='mt-32'>
-      <div className="grid grid-cols-3 gap-5">
+      {/* Grid for main charts */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         <TemperatureChart data={data[0].temperature} />
         <HumidityChart data={data[0].humidity} />
         <No2Chart data={data[0].no2} />
@@ -52,8 +53,9 @@ const Contents = () => {
         <Pm25Chart data={data[0].pm25} />
       </div>
 
+      {/* Flexbox for status and pie chart */}
       <div className="flex flex-col md:flex-row items-start md:items-center gap-5 pl-10 pt-6">
-        <div className="grid grid-cols-3 gap-4 flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:flex-1">
           <div className="col-span-1">
             <StatusSenduro />
           </div>
@@ -61,7 +63,7 @@ const Contents = () => {
             <StatusDawuhan />
           </div>
           <div className="col-span-1 flex-1">
-            <StatusJatiroto />
+            <StatusPasirian />
           </div>
         </div>
         <div className="flex justify-center items-center pb-6">
@@ -70,6 +72,8 @@ const Contents = () => {
           </div>
         </div>
       </div>
+
+      {/* Skala component */}
       <div className="w-full pt-6 pl-8">
         <Skala />
       </div>
