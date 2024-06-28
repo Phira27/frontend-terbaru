@@ -1,3 +1,4 @@
+// src/pages/About.js
 import React from "react";
 import { Container } from "@mui/material";
 
@@ -20,7 +21,7 @@ const About = () => {
           }}
         >
           <div
-            className="my-4"
+            className="my-4 dark:bg-gray-800 dark:text-black"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -64,7 +65,7 @@ const About = () => {
             </div>
           </div>
           <div
-            className="my-4"
+            className="my-4 dark:bg-gray-800 dark:text-black"
             style={{
               display: "flex",
               flexDirection: "column",
@@ -108,7 +109,7 @@ const About = () => {
           </div>
         </div>
         <div
-          className="my-4"
+          className="my-4 dark:bg-gray-800 dark:text-black"
           style={{
             display: "flex",
             flexDirection: "column",

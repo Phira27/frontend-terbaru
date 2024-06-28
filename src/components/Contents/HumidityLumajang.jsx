@@ -1,5 +1,5 @@
 import { FaThermometerHalf, FaTint } from 'react-icons/fa';
-import LumajangAPI from '../api/LumajangAPI';
+import LumajangAPI from '../../api/LumajangAPI';
 
 const HumidityLumajang = () => {
   const latestData = LumajangAPI();

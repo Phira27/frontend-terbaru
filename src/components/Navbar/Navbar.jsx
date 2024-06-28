@@ -3,12 +3,16 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import useDarkMode from "../../utils/DarkMode";  // Pastikan path ini benar
+import DarkModeSwitch from "../../utils/DarkModeSwitch";
 
 function NavBar() {
   const [expand, setExpanded] = useState(false);
   const [navColour, setNavbar] = useState(false);
+  const [darkMode, toggleDarkMode] = useDarkMode();
 
   useEffect(() => {
     function scrollHandler() {
@@ -77,6 +81,10 @@ function NavBar() {
               >
                 About
               </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item className="mt-3">
+            <DarkModeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

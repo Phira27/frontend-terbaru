@@ -1,4 +1,4 @@
-import SenduroAPI from "../api/SenduroAPI";
+import SenduroAPI from "../../api/SenduroAPI";
 
 const StatusSenduro = () => {
   
@@ -23,7 +23,7 @@ const StatusSenduro = () => {
           />
           <div className="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-center items-center">
             <div className="text-3xl sm:text-4xl md:text-5xl font-bold animate-bounce text-zinc-600">
-              {latestData.ispu_average}
+            {latestData.ispu_average % 1 === 0? latestData.ispu_average : latestData.ispu_average.toFixed(2)}
             </div>
             <div className="text-lg sm:text-xl md:text-2xl mt-1 text-zinc-600 text-center">
               {latestData.category_average}

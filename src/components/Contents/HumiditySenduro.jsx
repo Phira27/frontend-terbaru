@@ -1,5 +1,5 @@
 import { FaThermometerHalf, FaTint } from 'react-icons/fa';
-import SenduroAPI from '../api/SenduroAPI';
+import SenduroAPI from '../../api/SenduroAPI';
 
 const HumiditySenduro = () => {
   const latestData = SenduroAPI();

@@ -1,5 +1,5 @@
 import { FaThermometerHalf, FaTint } from 'react-icons/fa';
-import PasirianAPI from '../api/PasirianAPI';
+import PasirianAPI from '../../api/PasirianAPI';
 
 const HumidityPasirian = () => {
   const latestData = PasirianAPI();

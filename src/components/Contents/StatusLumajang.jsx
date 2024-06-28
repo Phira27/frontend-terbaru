@@ -1,4 +1,4 @@
-import LumajangAPI from "../api/LumajangAPI";
+import LumajangAPI from "../../api/LumajangAPI";
 
 function StatusLumajang() {
   const latestData = LumajangAPI();
@@ -9,7 +9,7 @@ function StatusLumajang() {
   };
 
   if (!latestData) {
-    return <div>Loading...</div>;
+    return <div><svg className="animate-spin h-5 w-5 mr-3 ..."></svg>Loading...</div>;
   }
 
   return (
@@ -23,7 +23,7 @@ function StatusLumajang() {
           />
           <div className="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-center items-center">
             <div className="text-2xl sm:text-4xl md:text-5xl font-bold animate-bounce text-zinc-600">
-              {latestData.ispu_average}
+            {latestData.ispu_average % 1 === 0? latestData.ispu_average : latestData.ispu_average.toFixed(2)}
             </div>
             <div className="text-lg sm:text-xl md:text-2xl mt-1 text-zinc-600 text-center">
               {latestData.category_average}

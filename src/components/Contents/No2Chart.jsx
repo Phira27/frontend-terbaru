@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
+import { Typography } from '@mui/material';
 
 function No2Chart() {
   const [chartData, setChartData] = useState([]);
@@ -41,7 +42,15 @@ function No2Chart() {
 
   return (
     <div className="mb-8">
-      <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">NO₂ Concentration</h2>
+      <Typography
+            variant="h5"
+            gutterBottom
+            fontFamily="Poppins"
+            fontWeight="500"
+            textAlign="center"
+          >
+            NO₂ Concentration
+          </Typography>
       {isLoading ? (
         <div className="flex justify-center items-center h-64">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>

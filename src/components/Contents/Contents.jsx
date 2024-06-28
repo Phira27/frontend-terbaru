@@ -8,10 +8,11 @@ import Skala from './Skala';
 import HumidityLumajang from './HumidityLumajang';
 import HumiditySenduro from './HumiditySenduro';
 import HumidityPasirian from './HumidityPasirian';
+import { Typography } from '@mui/material';
 
 const Contents = () => {
   return (
-    <div className='mt-16 sm:mt-24 md:mt-32 px-4 sm:px-6 md:px-8'>
+    <div className='mt-16 sm:mt-18 md:mt-20 px-4 sm:px-6 md:px-8'>
       {/* Grid for main charts */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6">
         <No2Chart />
@@ -20,14 +21,23 @@ const Contents = () => {
       </div>
 
       {/* Humidity section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6 pb-12">
         <HumiditySenduro />
         <HumidityLumajang />
         <HumidityPasirian />
       </div>
 
       {/* Status section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6">
+      <Typography
+            variant="h4"
+            gutterBottom
+            fontFamily="Poppins"
+            fontWeight="700"
+            textAlign="center"
+          >
+            KUALITAS UDARA
+          </Typography>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6 mt-5">
         <StatusSenduro />
         <StatusLumajang />
         <StatusPasirian />
