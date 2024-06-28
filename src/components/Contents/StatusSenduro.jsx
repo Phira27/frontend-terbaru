@@ -1,39 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import SenduroAPI from "../api/SenduroAPI";
 
 const StatusSenduro = () => {
-  // define state
-  const [latestData, setLatestData] = useState(null);
-
-  // function "fetchData"
-  const fetchData = async () => {
-    try {
-      // fetching
-      const response = await axios.get('http://localhost:3000/senduro/terbaru');
-      // get response data
-      const data = response.data;
-      // assign data to state "latestData"
-      setLatestData(data.data[0]); // Assuming the API returns an array with the latest data as the first item
-      console.log(data.data[0]);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }
-
-  // useEffect hook
-  useEffect(() => {
-    // Fetch data immediately when the component mounts
-    fetchData();
-
-    // Set up interval to fetch data every 5 seconds
-    const interval = setInterval(() => {
-      fetchData();
-    }, 5000);
-
-    // Clean up function to clear the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, []); // Empty dependency array means this effect runs once on mount and sets up the interval
-
+  
+  const latestData = SenduroAPI();
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric'};
     return new Date(dateString).toLocaleDateString('id', options);
@@ -44,23 +13,28 @@ const StatusSenduro = () => {
   }
 
   return (
-    <div className="text-2xl px-5 py-5 text-zinc-600 bg-white
-    border-slate-300 max-w-md md:max-w-2xl h-60 w-full border-2
-    transition-transform transform hover:scale-105 hover:shadow-lg
-    duration-300 ease-in-out rounded-sm">
-      <div className="flex justify-between items-center h-full">
-        <div className="flex">
-          <img src="./src/assets/wind.png" className="animate-pulse" width={120} height={80} alt="Wind" />
-          <div className="ml-4 flex flex-col justify-center">
-            <div className="flex flex-col items-center">
-              <div className="text-3xl font-bold animate-bounce">{latestData.ispu_average}</div>
-              <div className="text-xl mt-1">{latestData.category_average}</div>
+    <div className="bg-white border-2 border-slate-300 rounded-sm p-4 sm:p-5 max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl w-full transition-transform transform hover:scale-105 hover:shadow-lg duration-300 ease-in-out">
+      <div className="flex flex-col sm:flex-row justify-between items-center h-full">
+        <div className="flex flex-col sm:flex-row items-center mb-4 sm:mb-0">
+          <img
+            src="./src/assets/wind.png"
+            className="animate-pulse w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32"
+            alt="Wind"
+          />
+          <div className="mt-4 sm:mt-0 sm:ml-4 flex flex-col justify-center items-center">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold animate-bounce text-zinc-600">
+              {latestData.ispu_average}
+            </div>
+            <div className="text-lg sm:text-xl md:text-2xl mt-1 text-zinc-600 text-center">
+              {latestData.category_average}
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-end">
-          <div className="text-2xl font-semibold">Senduro</div>
-          <div className="text-lg py-1">{formatDate(latestData.time)}</div>
+        <div className="flex flex-col items-center sm:items-end mt-4 sm:mt-0">
+          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-600">Senduro</div>
+          <div className="text-base sm:text-lg md:text-xl py-1 text-zinc-600">
+            {formatDate(latestData.time)}
+          </div>
         </div>
       </div>
     </div>

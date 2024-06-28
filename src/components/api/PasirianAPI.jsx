@@ -1,0 +1,26 @@
+import { useState, useEffect } from 'react';
+import axios from "axios";
+
+const PasirianAPI = () => {
+  const [latestData, setLatestData] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/pasirian/terbaru');
+      setLatestData(response.data.data[0]);
+      console.log(response.data.data[0]);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+    const interval = setInterval(fetchData, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return latestData;
+};
+
+export default PasirianAPI;

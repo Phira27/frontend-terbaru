@@ -1,43 +1,40 @@
-import TemperatureChart from './TemperatureChart';
-import HumidityChart from './HumidityChart';
 import No2Chart from './No2Chart';
 import Pm10Chart from './Pm10Chart';
 import Pm25Chart from './Pm25Chart';
 import StatusSenduro from './StatusSenduro';
-import StatusDawuhan from './StatusLumajang';
+import StatusLumajang from './StatusLumajang';
 import StatusPasirian from './StatusPasirian';
 import Skala from './Skala';
+import HumidityLumajang from './HumidityLumajang';
+import HumiditySenduro from './HumiditySenduro';
+import HumidityPasirian from './HumidityPasirian';
 
 const Contents = () => {
-  
   return (
-    <div className='mt-32'>
+    <div className='mt-16 sm:mt-24 md:mt-32 px-4 sm:px-6 md:px-8'>
       {/* Grid for main charts */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
-        <No2Chart  />
-        <Pm10Chart  />
-        <Pm25Chart  />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6">
+        <No2Chart />
+        <Pm10Chart />
+        <Pm25Chart />
       </div>
 
-      {/* Flexbox for status and pie chart */}
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-5 pl-10 pt-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:flex-1">
-          <div className="col-span-1">
-            <StatusSenduro />
-          </div>
-          <div className="col-span-1">
-            <StatusDawuhan />
-          </div>
-          <div className="col-span-1 flex-1">
-            <StatusPasirian />
-          </div>
-        </div>
-        <div className="flex justify-center items-center pb-6">
-        </div>
+      {/* Humidity section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6">
+        <HumiditySenduro />
+        <HumidityLumajang />
+        <HumidityPasirian />
+      </div>
+
+      {/* Status section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6">
+        <StatusSenduro />
+        <StatusLumajang />
+        <StatusPasirian />
       </div>
 
       {/* Skala component */}
-      <div className="w-full pt-6 pl-8">
+      <div className="w-full">
         <Skala />
       </div>
     </div>

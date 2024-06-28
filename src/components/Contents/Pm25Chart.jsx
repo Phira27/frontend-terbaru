@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 
 function Pm25Chart() {
   const [chartData, setChartData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -17,17 +18,18 @@ function Pm25Chart() {
       const lumajangData = lumajangResponse.data.data;
       const senduroData = senduroResponse.data.data;
       
-      // Combine and transform the data for the chart
       const formattedData = pasirianData.map((item, index) => ({
-        time: new Date(item.time).toLocaleTimeString(),
+        time: new Date(item.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         pasirian_PM25: item.PM25_concentration,
         lumajang_PM25: lumajangData[index] ? lumajangData[index].PM25_concentration : null,
         senduro_PM25: senduroData[index] ? senduroData[index].PM25_concentration : null
-      })).reverse(); // Reverse to show oldest data first
+      })).reverse();
 
       setChartData(formattedData);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
+      setIsLoading(false);
     }
   };
 
@@ -38,23 +40,27 @@ function Pm25Chart() {
   }, []);
 
   return (
-    <div className='pr-3'>
-      <h2 className='text-2xl font-bold text-gray-800 text-center mb-1'>PM 2.5</h2>
-      {chartData.length > 0 ? (
-        <ResponsiveContainer width="100%" height={300}>
-        <LineChart width={400} height={300} data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="pasirian_PM25" stroke="#8884d8" name="Pasirian " />
-          <Line type="monotone" dataKey="lumajang_PM25" stroke="#82ca9d" name="Lumajang " />
-          <Line type="monotone" dataKey="senduro_PM25" stroke="#ffc658" name="Senduro " />
-        </LineChart>
+    <div className="mb-8">
+      <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">PM 2.5 Concentration</h2>
+      {isLoading ? (
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        </div>
+      ) : chartData.length > 0 ? (
+        <ResponsiveContainer width="100%" height={400}>
+          <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+            <XAxis dataKey="time" stroke="#888888" tick={{ fill: '#888888' }} />
+            <YAxis stroke="#888888" tick={{ fill: '#888888' }} />
+            <Tooltip contentStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }} />
+            <Legend verticalAlign="top" height={36} iconType="circle" />
+            <Line type="monotone" dataKey="pasirian_PM25" stroke="#8884d8" strokeWidth={2} dot={false} name="Pasirian" />
+            <Line type="monotone" dataKey="lumajang_PM25" stroke="#82ca9d" strokeWidth={2} dot={false} name="Lumajang" />
+            <Line type="monotone" dataKey="senduro_PM25" stroke="#ffc658" strokeWidth={2} dot={false} name="Senduro" />
+          </LineChart>
         </ResponsiveContainer>
       ) : (
-        <p>Loading data...</p>
+        <p className="text-center text-gray-600">No data available</p>
       )}
     </div>
   );

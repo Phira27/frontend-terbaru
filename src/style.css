@@ -165,6 +165,7 @@ button:focus {
   color: #fff;
 }
 
+
 .logo {
   height: 2.5em !important;
   width: 2.5em !important;
@@ -329,33 +330,3 @@ button:focus {
   }
 }
 
-/*---- Quoutes----- */
-.quotes-container {
-  z-index: -1;
-  background-image: var(--image-gradient), url(./assets/konoha.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
-  display: flex; 
-  flex-direction: column;
-  text-align: justify; 
-  width: 100%; 
-  padding: 10px; 
-  border-radius: 10px; 
-}
-
-
-.quotes {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.quotes audio {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  display: block;
-}
-
-/* --------- */
