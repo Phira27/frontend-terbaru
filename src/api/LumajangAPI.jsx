@@ -6,7 +6,7 @@ const LumajangAPI = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/lumajang/terbaru');
+      const response = await axios.get('https://back-end-terbaru.vercel.app/lumajang/terbaru');
       setLatestData(response.data.data[0]);
       console.log(response.data.data[0]);
     } catch (error) {

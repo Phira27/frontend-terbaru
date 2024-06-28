@@ -30,7 +30,7 @@ function HistoryPasirian() {
 
     // function "fetchData"
     const fetchData = async () => {
-        const response = await axios.get('http://localhost:3000/pasirian');
+        const response = await axios.get('https://back-end-terbaru.vercel.app/pasirian');
         const data = response.data.data;
 
         setPosts(data);

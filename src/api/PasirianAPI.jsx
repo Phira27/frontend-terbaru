@@ -6,7 +6,7 @@ const PasirianAPI = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/pasirian/terbaru');
+      const response = await axios.get('https://back-end-terbaru.vercel.app/pasirian/terbaru');
       setLatestData(response.data.data[0]);
       console.log(response.data.data[0]);
     } catch (error) {
