@@ -200,7 +200,7 @@ function HistoryLumajang() {
             }}
           >
             <iframe
-              src="https://www.google.com/maps?q=-8.11091,113.26795&z=15&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20986.946124534028!2d113.18067694893975!3d-8.144474359151298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd667c815555555%3A0x5aec0923509a05f3!2sAlun-Alun%20Lumajang!5e0!3m2!1sen!2sid!4v1720073583303!5m2!1sen!2sid"
               width="1200"
               height="450"
               style={{ border: 0 }}
