@@ -3,10 +3,9 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
-import useDarkMode from "../../utils/DarkMode";  // Pastikan path ini benar
+import useDarkMode from "../../utils/DarkMode";
 import DarkModeSwitch from "../../utils/DarkModeSwitch";
 
 function NavBar() {
@@ -36,17 +35,16 @@ function NavBar() {
       expand="lg"
       className={`${navColour ? "sticky" : "navbar"} py-2`}
     >
-      <Container fluid="md" className="position-relative">
+      <Container fluid className="px-3">
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" onClick={closeMenu}>
-          <img src={logo} className="img-fluid logo me-2" alt="brand" style={{maxHeight: '40px', maxWidth:'40px'}} />
-          <div className="brand-title text-wrap" style={{fontSize: 'clamp(0.8rem, 2vw, 1.2rem)'}}>
+          <img src={logo} className="logo me-2" alt="brand" />
+          <div className="brand-title">
             Pemantauan Kualitas Udara<br className="d-none d-sm-block" /> Kabupaten Lumajang
-          </div> 
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => setExpanded(!expand)}
-          className="position-absolute top-50 end-0 translate-middle-y"
         >
           <span></span>
           <span></span>
@@ -59,7 +57,6 @@ function NavBar() {
                 Home
               </Nav.Link>
             </Nav.Item>
-
             <NavDropdown title="History" id="basic-nav-dropdown">
               {['Pasirian', 'Lumajang', 'Senduro'].map((location) => (
                 <NavDropdown.Item
@@ -72,19 +69,13 @@ function NavBar() {
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
-
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={closeMenu}
-              >
+              <Nav.Link as={Link} to="/about" onClick={closeMenu}>
                 About
               </Nav.Link>
             </Nav.Item>
-
-            <Nav.Item className="mt-3">
-            <DarkModeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <Nav.Item className="d-flex align-items-center">
+              <DarkModeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>
