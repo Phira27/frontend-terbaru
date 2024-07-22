@@ -191,7 +191,7 @@ function HistorySenduro() {
             fontFamily="Poppins"
             textAlign="center"
           >
-            Lokasi Lumajang
+            Lokasi Senduro
           </Typography>
           <Box
             sx={{
@@ -204,7 +204,7 @@ function HistorySenduro() {
             }}
           >
             <iframe
-              src="https://www.google.com/maps?q=-8.11091,113.26795&z=15&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.096979684573!2d113.08536557595012!3d-8.091592191937007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6417a54a69f17%3A0xf34f010a8c8d1817!2sPura%20Mandhara%20Giri%20Semeru%20Agung!5e0!3m2!1sen!2sid!4v1720074331119!5m2!1sen!2sid"
               width="1200"
               height="450"
               style={{ border: 0 }}
