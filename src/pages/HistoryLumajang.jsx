@@ -43,14 +43,14 @@ function HistoryLumajang() {
       description:
         "Jaran Kencak Kesenian Asli Lumajang merupakan kesenian tarian kuda yang dapat menari ketika medengarkan alunan musik gamelan.",
       image:
-        "https://scontent.fmlg11-1.fna.fbcdn.net/v/t1.6435-9/47390687_1958972350816455_6316704635264434176_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mxXbmsmZSMMQ7kNvgG45amY&_nc_ht=scontent.fmlg11-1.fna&oh=00_AYB5PwJISRLN_7pBkZQAb0VdZu2TkW72AduXpxfS40G-tA&oe=66A063F2",
+        "https://www.wartapos.id/wp-content/uploads/2023/10/IMG-20231005-WA0130.jpg",
     },
     {
       title: "Pendopo Aryawiraraja",
       description:
         "Pendopo Aryawiraraja Kabupaten Lumajang sebagai rumah dinas Bupati dan Wakil Bupati Lumajang. Pendopo Aryawiraraja juga akan dijadikan sebagai tempat belajar Sejarah Lumajang.",
       image:
-        "https://portalberita.lumajangkab.go.id/files/berita/WhatsApp_Image_2021-11-15_at_13_00_57.jpeg",
+        "https://www.petrogas.co.id/wp-content/uploads/2021/12/semeru-10.jpg",
     },
     {
       title: "Tari Topeng Kaliwungu",
