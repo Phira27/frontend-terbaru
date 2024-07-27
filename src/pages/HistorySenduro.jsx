@@ -27,7 +27,7 @@ function HistorySenduro() {
 
   // function "fetchData"
   const fetchData = async () => {
-    const response = await axios.get("https://back-end-terbaru.vercel.app/senduro");
+    const response = await axios.get("https://backend.sikudalumajang.my.id/senduro");
     const data = response.data.data;
 
     setPosts(data);

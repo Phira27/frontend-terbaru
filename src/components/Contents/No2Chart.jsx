@@ -10,9 +10,9 @@ function No2Chart() {
   const fetchData = async () => {
     try {
       const [pasirianResponse, lumajangResponse, senduroResponse] = await Promise.all([
-        axios.get("http://localhost:3000/pasirian/terbaru"),
-        axios.get("http://localhost:3000/lumajang/terbaru"),
-        axios.get("http://localhost:3000/senduro/terbaru")
+        axios.get("https://backend.sikudalumajang.my.id/pasirian/terbaru"),
+        axios.get("https://backend.sikudalumajang.my.id/lumajang/terbaru"),
+        axios.get("https://backend.sikudalumajang.my.id/senduro/terbaru")
       ]);
 
       const pasirianData = pasirianResponse.data.data;

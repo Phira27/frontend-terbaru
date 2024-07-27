@@ -27,7 +27,7 @@ function HistoryLumajang() {
 
   // function "fetchData"
   const fetchData = async () => {
-    const response = await axios.get("https://back-end-terbaru.vercel.app/lumajang");
+    const response = await axios.get("https://backend.sikudalumajang.my.id/lumajang");
     const data = response.data.data;
 
     setPosts(data);

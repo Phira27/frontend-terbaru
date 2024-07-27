@@ -6,7 +6,7 @@ const SenduroAPI = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://back-end-terbaru.vercel.app/senduro/terbaru');
+      const response = await axios.get('https://backend.sikudalumajang.my.id/senduro/terbaru');
       setLatestData(response.data.data[0]);
       console.log(response.data.data[0]);
     } catch (error) {
